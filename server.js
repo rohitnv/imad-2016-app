@@ -29,7 +29,7 @@ var htmlTemplate =
         `<html>
             <head>
                 <title>
-                       $(title)
+                       ${title}
                 </title>
                 <meta name = "viewport" content = "width-device-width,initial-scale-1"/>
     
@@ -44,14 +44,14 @@ var htmlTemplate =
                     <hr/>
                     <h3>
                         
-                      $(heading)
+                      ${heading}
                     </h3>
                         <div>
                             Oct 15 2016
                          </div>
                             
                         <div>
-                            $(content)
+                            ${content}
                             </div>  
                             
                        </div>     
