@@ -34,14 +34,18 @@ app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
 
-app.get('/article-two', function (req, res) {
-  res.send('Article two is served here');
+app.get('/article2', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
 });
 
-app.get('/article-threee', function (req, res) {
-  res.send('Article three is served here');
+app.get('/article3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article3.html'));
 });
 
+
+app.get('/article4', function (req, res) {
+  res.send('Article four is served here');
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
