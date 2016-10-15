@@ -6,9 +6,9 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-var articleOne = {
-    title: 'Article One |Rohit N V',
+var articles ={
+    'article-one':{
+           title: 'Article One |Rohit N V',
     heading: 'Article One ',
     date:'Sep 5, 2016' ,
     content :`  <p>
@@ -19,8 +19,35 @@ var articleOne = {
                             </p>  `
     
 
+    },
+    'article2':{
+                   title: 'Article Two |Rohit N V',
+    heading: 'Article Two ',
+    date:'Sep 5, 2016' ,
+    content :`  <p>
+                            This is the content of my first article. I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.
+                            </p>
+                        <p>
+                            This is the content of my first article. I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.
+                            </p>  `
     
-}
+
+    },
+    'article3':{
+                   title: 'Article Three |Rohit N V',
+    heading: 'Article Three ',
+    date:'Sep 5, 2016' ,
+    content :`  <p>
+                            This is the content of my first article. I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.
+                            </p>
+                        <p>
+                            This is the content of my first article. I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.I am feeling happy and Good.
+                            </p>  `
+            
+        
+    }
+};
+
 function createTemplate(data){
 var title =data.title;
 var heading = data.heading;
@@ -63,8 +90,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/cc', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'cc.html'));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-one', function (req, res) {
