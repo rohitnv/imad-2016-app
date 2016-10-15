@@ -109,7 +109,7 @@ app.get('/article3', function (req, res) {
 //-----------Java script page response-----------------------------------------
 
 app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.jsl'));
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 
